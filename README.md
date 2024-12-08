@@ -6,7 +6,7 @@ SP: SharedPreferences
 -> Uses ShardPreferences as its main data storage.
 
 
-### Features:
+### Main Features:
 - CourseMate's personalization chatbot
 - Using our machine learning model to get course(s) recommendations based on user's preference
 - sync your course(s) to the cloud
