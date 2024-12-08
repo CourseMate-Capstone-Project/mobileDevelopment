@@ -16,7 +16,7 @@
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Course Title"
+            android:text="@string/tvfTitle"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
             android:id="@+id/tvCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Category"
+            android:text="@string/tvfCat"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -38,7 +38,7 @@
             android:id="@+id/tvInterest"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Interest"
+            android:text="@string/tvfInterest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCategory"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -48,7 +48,6 @@
             android:id="@+id/ivFavoriteToggle"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:contentDescription="Favorite Toggle"
             android:src="@drawable/bookmark_border_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +58,7 @@
             android:id="@+id/btnViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View Details"
+            android:text="@string/btnfDetail"
             app:layout_constraintTop_toBottomOf="@id/tvInterest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />

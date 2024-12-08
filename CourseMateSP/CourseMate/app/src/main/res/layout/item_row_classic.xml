@@ -55,7 +55,6 @@
             android:id="@+id/ivFavoriteToggle"
             android:layout_width="38dp"
             android:layout_height="38dp"
-            android:contentDescription="Favorite toggle button"
             android:src="@drawable/bookmark_border_24"
             card_view:layout_constraintBottom_toTopOf="@+id/button"
             card_view:layout_constraintEnd_toEndOf="parent"

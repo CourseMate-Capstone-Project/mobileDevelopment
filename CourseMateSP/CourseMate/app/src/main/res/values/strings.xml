@@ -11,6 +11,13 @@
     <string name="cDeskripsiCourse">Deskripse course</string>
     <string name="cEnrollButt">ENROLL</string>
 
+    <!--ITEM ROW FAVOURITE-->
+    <string name="tvfTitle">Course name</string>
+    <string name="tvfCat">Category</string>
+    <string name="tvfInterest">Interest</string>
+    <string name="btnfDetail">Website</string>
+
+
 <!--UNTUK PREF FORM-->
     <string-array name="interest_options">
         <item>Select Your Interest</item>
