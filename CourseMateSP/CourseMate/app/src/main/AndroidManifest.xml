@@ -30,7 +30,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.chatbot.ChatbotActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".ui.forrms.PreferenceFormActivity" />
         <activity android:name=".ui.forrms.LoginFormActivity" />
         <activity android:name=".ui.forrms.RegisterFormActivity" />
