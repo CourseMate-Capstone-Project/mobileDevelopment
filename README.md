@@ -9,6 +9,6 @@ SP: SharedPreferences
 ### Main Features:
 - CourseMate's personalization chatbot
 - Using our machine learning model to get course(s) recommendations based on user's preference
-- sync your course(s) to the cloud
+- ~sync~ and fetch your course(s) to the cloud
 
 
