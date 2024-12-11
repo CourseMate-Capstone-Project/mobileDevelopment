@@ -72,6 +72,7 @@ class HomeFragment : Fragment() {
         }*/
         binding.rvRecomm.adapter = recommendationsAdapter
         binding.rvRecomm.layoutManager = LinearLayoutManager(context)
+        binding.rvRecomm.isNestedScrollingEnabled = false
 
         // Load courses from SharedPreferences and set the data in the adapter
         val courses = loadCoursesFromSharedPreferences()

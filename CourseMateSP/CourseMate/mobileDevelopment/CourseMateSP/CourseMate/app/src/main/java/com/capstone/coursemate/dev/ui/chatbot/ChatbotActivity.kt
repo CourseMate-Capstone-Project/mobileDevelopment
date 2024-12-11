@@ -5,48 +5,61 @@ import android.os.PersistableBundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.coursemate.dev.databinding.AactivityChatbotBinding
 
-class ChatbotActivity :AppCompatActivity(){
-    private lateinit var binding:AactivityChatbotBinding
-
+class ChatbotActivity : AppCompatActivity() {
+    private lateinit var binding: AactivityChatbotBinding
+    private lateinit var webView: WebView
+    private val viewModel: WebViewViewModel by viewModels() // Use ViewModel for state management
+    private val initialUrl = "https://coursemate-chatbot-866939629489.asia-southeast2.run.app/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = AactivityChatbotBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.hide()
 
-        val webView:WebView = binding.wvChatbot
-        val url = "https://coursemate-chatbot-866939629489.asia-southeast2.run.app/"
-        //val url = intent.getStringExtra("URL")
+        supportActionBar?.hide() // Hide the action bar
 
-        webView.settings.apply {
-            javaScriptEnabled = true
-            domStorageEnabled = true // Enable DOM storage
-            useWideViewPort = true // Adjust layout to fit screen
-            loadWithOverviewMode = true // Load the webpage fully zoomed out
-            builtInZoomControls = true // Enable zoom controls if needed
-            displayZoomControls = false // Hide zoom buttons
-        }
-        webView.webViewClient = WebViewClient() // Ensures content loads within the app
-        webView.loadUrl(url)
+        webView = binding.wvChatbot
+        setupWebView()
 
-        if (savedInstanceState != null) {
-            // Restore WebView state
-            webView.restoreState(savedInstanceState)
+        // Restore WebView state from ViewModel or load initial URL
+        if (viewModel.webViewState != null) {
+            webView.restoreState(viewModel.webViewState!!)
         } else {
-            // Load the URL for the first time
-            val hardcodedUrl = "https://coursemate-chatbot-866939629489.asia-southeast2.run.app/"
-            webView.loadUrl(hardcodedUrl)
+            webView.loadUrl(initialUrl)
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        // Save the WebView state
-        val webView:WebView = binding.wvChatbot
-        webView.saveState(outState)
+    private fun setupWebView() {
+        webView.settings.apply {
+            javaScriptEnabled = true
+            domStorageEnabled = true
+            useWideViewPort = true
+            loadWithOverviewMode = true
+            builtInZoomControls = true
+            displayZoomControls = false
+        }
+
+        // Ensure WebView content loads within the app
+        webView.webViewClient = WebViewClient()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Save WebView state to ViewModel
+        viewModel.webViewState = Bundle().also {
+            webView.saveState(it)
+        }
+    }
+
+    override fun onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack() // Navigate back in WebView history
+        } else {
+            super.onBackPressed() // Exit the activity
+        }
     }
 }

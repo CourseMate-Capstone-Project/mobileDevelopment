@@ -62,17 +62,17 @@ class RecommendationsAdapter: ListAdapter<Course, RecommendationsAdapter.TestEnd
                 //binding name
                 itemName.text = card.title
                 textView2.text = card.short_intro
-                button.setOnClickListener{
+                fabButton.setOnClickListener{
                     val eventLink = card.url // Assuming 'link' is the property in your EventDetail model
                     val intent = Intent(Intent.ACTION_VIEW)
                     intent.data = Uri.parse(eventLink)
                     it.context.startActivity(intent)
                 }
                 // Handle favorite toggle
-                ivFavoriteToggle.setImageResource(
+                fabFavoriteToggle.setImageResource(
                     if (card.isFavorite) R.drawable.bookmark_added_24 else R.drawable.bookmark_border_24
                 )
-                ivFavoriteToggle.setOnClickListener {
+                fabFavoriteToggle.setOnClickListener {
                     // Optional: Handle toggle locally if required
                     Toast.makeText(it.context, "Favorite clicked for ${card.title}", Toast.LENGTH_SHORT).show()
 

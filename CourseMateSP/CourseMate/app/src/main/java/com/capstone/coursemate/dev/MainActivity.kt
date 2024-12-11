@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportActionBar!!.setIcon(R.mipmap.ic_launcher_round)
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -63,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             //intent.putExtra("URL", "https://www.google.com") // Replace with your chatbot URL
             startActivity(intent)
         }
+
 
 
     }

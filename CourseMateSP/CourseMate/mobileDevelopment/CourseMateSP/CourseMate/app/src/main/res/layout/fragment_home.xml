@@ -30,6 +30,7 @@
                 android:id="@+id/textView18"
                 android:layout_width="317dp"
                 android:layout_height="42dp"
+                android:paddingTop="5dp"
                 android:text="@string/recommendation_courses"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -38,7 +39,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRecomm"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 app:layout_constraintStart_toStartOf="@+id/textView18"
                 app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -69,6 +70,7 @@
                         android:id="@+id/textView19"
                         android:layout_width="327dp"
                         android:layout_height="50dp"
+                        android:gravity="center_vertical"
                         android:paddingStart="5dp"
                         android:text="@string/no_preference_data"
                         android:textAlignment="textStart"

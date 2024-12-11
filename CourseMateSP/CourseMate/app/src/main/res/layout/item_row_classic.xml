@@ -19,12 +19,13 @@
 
         <TextView
             android:id="@+id/item_name"
-            android:layout_width="281dp"
-            android:layout_height="37dp"
+            android:layout_width="248dp"
+            android:layout_height="41dp"
             android:textAlignment="textStart"
             android:textSize="16sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toStartOf="@+id/button"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:text="@string/cJudulCourse" />
@@ -35,6 +36,7 @@
             android:layout_height="53dp"
             android:layout_marginEnd="4dp"
             android:text="@string/cEnrollButt"
+            android:visibility="invisible"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
@@ -42,23 +44,49 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="283dp"
-            android:layout_height="59dp"
+            android:layout_width="248dp"
+            android:layout_height="57dp"
             android:text="@string/cDeskripsiCourse"
             android:textAlignment="textStart"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/button"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/item_name" />
+            card_view:layout_constraintTop_toBottomOf="@+id/item_name"
+            card_view:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/ivFavoriteToggle"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:src="@drawable/bookmark_border_24"
+            android:visibility="invisible"
             card_view:layout_constraintBottom_toTopOf="@+id/button"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/item_name" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/aCardHint"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:srcCompat="@drawable/baseline_navigate_next_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabFavoriteToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/aCardHint"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toStartOf="@+id/fabButton"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:srcCompat="@drawable/bookmark_border_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

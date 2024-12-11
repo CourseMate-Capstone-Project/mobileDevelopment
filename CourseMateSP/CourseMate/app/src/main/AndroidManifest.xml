@@ -36,6 +36,7 @@
         <activity android:name=".ui.forrms.LoginFormActivity" />
         <activity android:name=".ui.forrms.RegisterFormActivity" />
         <activity android:name=".ui.forrms.UpdateProfileActivity"/>
+        <activity android:name=".ui.forrms.ResetPasswordFormActivity"/>
     </application>
 
 </manifest>

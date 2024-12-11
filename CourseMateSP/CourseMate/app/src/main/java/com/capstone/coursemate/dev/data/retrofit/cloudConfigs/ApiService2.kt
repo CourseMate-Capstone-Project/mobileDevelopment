@@ -4,6 +4,8 @@ import com.capstone.coursemate.dev.data.response.authentications.ApiResponse
 import com.capstone.coursemate.dev.data.response.authentications.LoginRequest
 import com.capstone.coursemate.dev.data.response.authentications.LoginResponse
 import com.capstone.coursemate.dev.data.response.authentications.RegisterRequest
+import com.capstone.coursemate.dev.data.response.authentications.ResetPasswordEmailRequest
+import com.capstone.coursemate.dev.data.response.authentications.ResetPasswordRequest
 import com.capstone.coursemate.dev.data.response.recommendationAPI.Course
 import com.capstone.coursemate.dev.data.response.favourites.FavoriteRequest
 import com.capstone.coursemate.dev.data.response.profiles.ProfileResponse
@@ -27,6 +29,24 @@ interface ApiService2 {
 
     @POST("auth/login")
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
+
+/*    @POST("auth/forgot-password")
+    suspend fun requestPasswordReset(
+        @Body request: ResetPasswordEmailRequest
+    ): Response<ApiResponse>
+
+    @POST("auth/reset-password")
+    suspend fun resetPassword(
+        @Body request: ResetPasswordRequest
+    ): Response<ApiResponse>*/
+
+    @POST("auth/forgot-password")
+    suspend fun requestPasswordReset(@Body email: Map<String, String>): Response<ApiResponse>
+
+    @POST("auth/reset-password")
+    suspend fun resetPassword(@Body resetDetails: Map<String, String>): Response<ApiResponse>
+
+
 
     @GET("profile")
     suspend fun getProfile(@Header("Authorization") token: String): Response<ProfileResponse>

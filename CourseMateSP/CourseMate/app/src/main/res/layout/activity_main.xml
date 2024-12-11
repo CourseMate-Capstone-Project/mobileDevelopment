@@ -30,14 +30,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/mobile_navigation" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/extended_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|center_horizontal"
         android:layout_margin="16dp"
         android:text="@string/extended_fab_label"
         android:textColor="@color/teal_200"
@@ -46,7 +45,7 @@
         app:iconTint="@color/teal_200"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@color/teal_700"
-        app:strokeColor="@color/teal_200"
-        app:strokeWidth="1dp" />
+        app:strokeColor="@color/purple_500" />
 </androidx.constraintlayout.widget.ConstraintLayout>

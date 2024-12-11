@@ -14,6 +14,7 @@ import com.capstone.coursemate.dev.data.response.authentications.AuthViewModelFa
 import com.capstone.coursemate.dev.data.response.authentications.TokenManager
 import com.capstone.coursemate.dev.data.retrofit.cloudConfigs.ApiConfig2
 import com.capstone.coursemate.dev.databinding.FormLoginBinding
+import com.capstone.coursemate.dev.databinding.FormResetPasswordBinding
 
 class LoginFormActivity :AppCompatActivity(){
     private lateinit var binding: FormLoginBinding
@@ -41,6 +42,9 @@ class LoginFormActivity :AppCompatActivity(){
 
         binding.registerText.setOnClickListener {
             startActivity(Intent(this, RegisterFormActivity::class.java))
+        }
+        binding.forgotPassword.setOnClickListener{
+            startActivity(Intent(this,ResetPasswordFormActivity::class.java))
         }
 
         observeViewModel()

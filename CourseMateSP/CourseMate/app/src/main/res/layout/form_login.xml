@@ -99,6 +99,16 @@
                 android:text="@string/register_text"
                 android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/forgotPassword"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Forgot Password"
+                android:textColor="#9f0000"
+                android:textSize="14sp" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
