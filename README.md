@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CourseMate App
 MD branch of this project development.
 
